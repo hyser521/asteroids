@@ -37,6 +37,12 @@ def main():
             if(collision.check_collision(player)):
                 print("Game over!")
                 exit()
+        for collision in asteroid:
+            for opportunity in shots:
+                if(collision.check_collision(opportunity)):
+                    collision.kill()
+                    opportunity.kill()
+                    
         pygame.Surface.fill(screen, (0,0,0))
         for sprite in drawable:
             sprite.draw(screen)
