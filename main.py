@@ -40,9 +40,9 @@ def main():
         for collision in asteroid:
             for opportunity in shots:
                 if(collision.check_collision(opportunity)):
-                    collision.kill()
+                    collision.split()
                     opportunity.kill()
-                    
+
         pygame.Surface.fill(screen, (0,0,0))
         for sprite in drawable:
             sprite.draw(screen)
